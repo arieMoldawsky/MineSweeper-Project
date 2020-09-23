@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(167, 233, 241);
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+table {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: silver;
+}
+
+.board td {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 0;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 10%;
+    font-size: 12px;
+}
+
+.board td:hover {
+    cursor: pointer;
+}
+
+/* .cell-0-1 {
+    background-color: white;
+} */
+
+/* td button {
+    background-color: #ffa8B6;
+    height: 20px;
+    width: 20px;
+    border-width: 0.5px;
+    /* display: block; */
+
+/* }  */
+
+.timer {
+    background-color: black;
+    border: 0.5px solid black;
+    padding: 2px;
+    color: red;
+    font-family: monospace;
+    margin: 10px;
+    margin-left: 100px;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 320px;
+    margin: 0 auto;
+    min-height: 100px;
+}
+
+.level button {
+    width: 30px;
+    height: auto;
+    flex: 1 1 auto;
+    margin: 10px;
+    margin-bottom: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    float: left;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.2s;
+    background-color: silver;
+    border-radius: 10%;
+}
+
+.level button:hover {
+    background-color: snow;
+    cursor: pointer;
+}
