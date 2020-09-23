@@ -1,11 +1,12 @@
 body {
-    background-color: rgb(167, 233, 241);
+    background-color: rgb(38, 39, 34);
 }
 
 h1 {
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
+    color: honeydew;
 }
 
 table {
@@ -13,6 +14,11 @@ table {
     margin-left: auto;
     margin-right: auto;
     background-color: silver;
+    border: 2px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .board td {
@@ -31,27 +37,15 @@ table {
     cursor: pointer;
 }
 
-/* .cell-0-1 {
-    background-color: white;
-} */
-
-/* td button {
-    background-color: #ffa8B6;
-    height: 20px;
-    width: 20px;
-    border-width: 0.5px;
-    /* display: block; */
-
-/* }  */
-
 .timer {
     background-color: black;
-    border: 0.5px solid black;
+    border: 1px solid rgb(85, 84, 84);
     padding: 2px;
+    padding-left: 25px;
     color: red;
     font-family: monospace;
     margin: 10px;
-    margin-left: 100px;
+    margin-left: 160px;
 }
 
 .level {
@@ -78,7 +72,11 @@ table {
     text-transform: uppercase;
     transition: 0.2s;
     background-color: silver;
-    border-radius: 10%;
+    border: 2.5px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .level button:hover {

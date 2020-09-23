@@ -124,7 +124,7 @@ function cellClicked(thisCell, i, j) {
         gameOver();
     }
     if (!currCell.isMine && currCell.minesAroundCount === 0) {
-        findNegs(gBoard, { i: i, j: j })
+        expandShown(gBoard, { i: i, j: j })
         victory();
     }
     if (!currCell.isMine && currCell.minesAroundCount !== 0) { 
@@ -141,7 +141,7 @@ function cellClicked(thisCell, i, j) {
     console.table(gBoard);
 }
 
-function findNegs(board, pos) {
+function expandShown(board, pos) {
     for (var i = pos.i - 1; i <= pos.i + 1; i++) {
         if (i < 0 || i >= board.length) continue;
         for (var j = pos.j - 1; j <= pos.j + 1; j++) {
