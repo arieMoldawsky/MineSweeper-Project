@@ -47,8 +47,7 @@ table {
     font-family: monospace;
     /* margin: 10px; */
     margin: 0px;
-    margin-left: 20%;
-    display: inline-block;
+    /* margin-left: 20%; */
 }
 .score {
     background-color: black;
@@ -60,7 +59,6 @@ table {
     /* margin: 10px; */
     margin: 0px;
     margin-left: 220px;
-    display: inline-block;
 }
 
 .level {
@@ -122,11 +120,15 @@ table {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
-    display: inline-block;
     margin-left: 230px;
     font-size: x-large;
 }
 
 .smiley:hover {
     cursor: pointer;
+}
+
+.first {
+    margin: auto;
+    width: 575px;
 }
