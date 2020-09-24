@@ -148,7 +148,7 @@ function cellClicked(thisCell, i, j) {
         gHint = false;
         return;
     }
-    
+
     if (gHints === 0) {
         alert('No more hints..')
     }
@@ -247,6 +247,10 @@ function rightClick(i, j) {
     if (e.which) rightclick = (e.which == 3);
     else if (e.button) rightclick = (e.button == 2);
     if (rightclick && gScore > 0) {
+        if (gIsFirstClick === true) {
+            gIsFirstClick = false;
+            timerInterval = setInterval(timer, 1000);
+        }
         gBoard[i][j].isMarked = true;
         renderBoard(gBoard);
         gGame.markedCount += 1;
