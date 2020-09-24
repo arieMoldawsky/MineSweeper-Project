@@ -19,6 +19,7 @@ table {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
+    transition: 0.2s;
 }
 
 .board td {
@@ -44,8 +45,22 @@ table {
     padding-left: 25px;
     color: red;
     font-family: monospace;
-    margin: 10px;
-    margin-left: 160px;
+    /* margin: 10px; */
+    margin: 0px;
+    margin-left: 20%;
+    display: inline-block;
+}
+.score {
+    background-color: black;
+    border: 1px solid rgb(85, 84, 84);
+    padding: 2px;
+    padding-left: 25px;
+    color: red;
+    font-family: monospace;
+    /* margin: 10px; */
+    margin: 0px;
+    margin-left: 220px;
+    display: inline-block;
 }
 
 .level {
@@ -81,5 +96,37 @@ table {
 
 .level button:hover {
     background-color: snow;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.lives {
+    font-size: large;
+    text-align: center;
+    margin: auto;
+    width: 85px;
+    padding: 5px;
+    background-color: silver;
+    border: 2.5px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.smiley {
+    transition: 0.2s;
+    background-color: silver;
+    border: 2.5px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+    display: inline-block;
+    margin-left: 230px;
+    font-size: x-large;
+}
+
+.smiley:hover {
     cursor: pointer;
 }
