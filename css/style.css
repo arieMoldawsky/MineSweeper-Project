@@ -22,6 +22,10 @@ table {
     transition: 0.2s;
 }
 
+/* tbody:hover {
+    background-color: rgb(231, 163, 163);
+} */
+
 .board td {
     border-width: 1px;
     border-color: black;
@@ -36,6 +40,7 @@ table {
 
 .board td:hover {
     cursor: pointer;
+    background-color:rgb(156, 156, 156);
 }
 
 .timer {
@@ -138,8 +143,9 @@ table {
 }
 
 .hints:hover {
+    background-color: snow;
     cursor: pointer;
-}
+    transition: 0.5s;}
 
 .smiley {
     transition: 0.2s;
