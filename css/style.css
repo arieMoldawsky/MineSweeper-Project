@@ -42,7 +42,7 @@ table {
     background-color: black;
     border: 1px solid rgb(85, 84, 84);
     padding: 2px;
-    padding-left: 25px;
+    padding-left: 18px;
     color: red;
     font-family: monospace;
     /* margin: 10px; */
@@ -53,7 +53,7 @@ table {
     background-color: black;
     border: 1px solid rgb(85, 84, 84);
     padding: 2px;
-    padding-left: 25px;
+    padding-left: 18px;
     color: red;
     font-family: monospace;
     /* margin: 10px; */
@@ -98,18 +98,47 @@ table {
     transition: 0.5s;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 320px;
+    margin: 0 auto;
+    min-height: 60px;
+}
+
 .lives {
     font-size: large;
     text-align: center;
     margin: auto;
     width: 85px;
-    padding: 5px;
+    padding: 4px;
     background-color: silver;
     border: 2.5px solid #dadada;
     border-radius: 7px;
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
+}
+
+.hints {
+    font-size: large;
+    text-align: center;
+    margin: auto;
+    width: 85px;
+    padding: 4px;
+    background-color: silver;
+    border: 2.5px solid #dadada;
+    border-radius: 7px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed; 
+}
+
+.hints:hover {
+    cursor: pointer;
 }
 
 .smiley {
