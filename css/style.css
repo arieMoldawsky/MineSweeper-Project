@@ -58,7 +58,7 @@ table {
     font-family: monospace;
     /* margin: 10px; */
     margin: 0px;
-    margin-left: 220px;
+    margin-left: 190px;
 }
 
 .level {
@@ -120,8 +120,9 @@ table {
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
-    margin-left: 230px;
+    margin-left: 190px;
     font-size: x-large;
+    max
 }
 
 .smiley:hover {
@@ -130,5 +131,5 @@ table {
 
 .first {
     margin: auto;
-    width: 575px;
+    width: 495px;
 }
