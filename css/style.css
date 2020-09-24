@@ -39,8 +39,10 @@ table {
 }
 
 .board td:hover {
+
     cursor: pointer;
     background-color:rgb(156, 156, 156);
+    transition: 0.3s;
 }
 
 .timer {
@@ -145,7 +147,8 @@ table {
 .hints:hover {
     background-color: snow;
     cursor: pointer;
-    transition: 0.5s;}
+    transition: 0.5s;
+}
 
 .smiley {
     transition: 0.2s;
