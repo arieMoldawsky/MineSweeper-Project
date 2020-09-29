@@ -66,7 +66,7 @@ function buildBoard() {
 
     // generateMines(board);
     // setMinesNegsCount(board);
-    console.table(board);
+    // console.table(board);
     return board;
 }
 
@@ -183,7 +183,7 @@ function cellClicked(thisCell, i, j) {
     }
     gIsFirstClick = false;
     renderBoard(gBoard); //to check later if can change to rendering the specific cell instead
-    console.table(gBoard);
+    // console.table(gBoard);
 }
 
 function hint(pos) {
@@ -252,7 +252,14 @@ function rightClick(i, j) {
     var e = window.event;
     if (e.which) rightclick = (e.which == 3);
     else if (e.button) rightclick = (e.button == 2);
-    if (rightclick && gScore > 0) {
+    if (rightclick && gScore > 0 && gBoard[i][j].isMarked) {
+        gBoard[i][j].isMarked = false;
+        renderBoard(gBoard);
+        gGame.markedCount -= 1;
+        gScore += 1;
+        score();
+    }
+    else if (rightclick && gScore > 0) {
         if (gIsFirstClick === true) {
             gIsFirstClick = false;
             timerInterval = setInterval(timer, 1000);
