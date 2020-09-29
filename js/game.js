@@ -43,7 +43,9 @@ function resetGame() {
     document.querySelector('.hints').innerText = '💡💡💡';
     document.querySelector('.lives').innerText = '💛💛💛';
     document.querySelector('.timer').innerText = gGame.secsPassed;
-    document.querySelector('.smiley').innerText = '😀';
+    var smiley = document.querySelector('.smiley');
+    smiley.style = 'animation-iteration-count: 0';
+    smiley.innerText = '😀';
     gIsFirstClick = true;
 }
 
@@ -137,19 +139,21 @@ function cellClicked(thisCell, i, j) {
     if (!gGame.isOn) return;
 
     if (gHints !== 0 && thisCell.classList[0] === 'hints') {
+        document.querySelector('.hints').style += '; background-color: rgb(231, 227, 227); box-shadow: 0 0 10px gold;';  
         hintsCount(gHints);
         gHint = true;
         return;
     }
 
     if (gHint) {
+        document.querySelector('.hints').style += '; background-color: rgb(218, 216, 216); box-shadow: 0 0 10px #9ecaed;';
         hint({ i: i, j: j });
         setTimeout(function () { renderBoard(gBoard) }, 700);
         gHint = false;
         return;
     }
 
-    if (gHints === 0) {
+    if (thisCell.classList[0] === 'hints' && gHints === 0) {
         alert('No more hints..')
     }
 
@@ -170,6 +174,8 @@ function cellClicked(thisCell, i, j) {
         generateMines(gBoard);
         setMinesNegsCount(gBoard);
         timerInterval = setInterval(timer, 1000);
+        var smiley = document.querySelector('.smiley');
+        smiley.style = 'animation-iteration-count: infinite';
     }
     if (!currCell.isMine && currCell.minesAroundCount === 0 && !gIsFirstClick) {
         expandShown(gBoard, { i: i, j: j })
@@ -250,6 +256,8 @@ function rightClick(i, j) {
         if (gIsFirstClick === true) {
             gIsFirstClick = false;
             timerInterval = setInterval(timer, 1000);
+            var smiley = document.querySelector('.smiley');
+            smiley.style = 'animation-iteration-count: infinite';
         }
         gBoard[i][j].isMarked = true;
         renderBoard(gBoard);
@@ -262,6 +270,8 @@ function rightClick(i, j) {
 
 function gameOver() {
     clearInterval(timerInterval);
+    var smiley = document.querySelector('.smiley');
+    smiley.style = 'animation-iteration-count: 0';
     for (var i = 0; i < gBoard.length; i++) {
         for (var j = 0; j < gBoard[i].length; j++) {
             var currCell = gBoard[i][j];
@@ -279,7 +289,9 @@ function victorious() {
     if (isVictory()) {
         clearInterval(timerInterval);
         gGame.isOn = false;
-        document.querySelector('.smiley').innerText = '😎';
+        var smiley = document.querySelector('.smiley');
+        smiley.style = 'animation-iteration-count: 0';
+        smiley.innerText = '😎';
         renderBoard(gBoard);
         alert('You\'re the Winner!');
     }

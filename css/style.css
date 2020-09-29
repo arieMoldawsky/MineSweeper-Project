@@ -7,6 +7,7 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     color: honeydew;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 0.6);
 }
 
 table {
@@ -39,33 +40,57 @@ table {
 }
 
 .board td:hover {
-
     cursor: pointer;
     background-color:rgb(156, 156, 156);
     transition: 0.3s;
 }
 
-.timer {
+.first {
+    margin: auto;
+    margin-bottom: 25px;
+    width: 335px;
+    box-sizing: border-box;
+}
+
+.first .timer {
+    display: inline-block;
     background-color: black;
     border: 1px solid rgb(85, 84, 84);
     padding: 2px;
-    padding-left: 16px;
+    /* padding-left: 2x; */
     color: red;
     font-family: monospace;
+    text-align: right;
     /* margin: 10px; */
     margin: 0px;
     /* margin-left: 20%; */
+    height: 20px;
+    min-width: 34px;
+    box-sizing: border-box;
 }
-.score {
+.first .score {
+    display: inline-block;
     background-color: black;
     border: 1px solid rgb(85, 84, 84);
     padding: 2px;
-    padding-left: 16px;
     color: red;
     font-family: monospace;
+    text-align: right;
     /* margin: 10px; */
     margin: 0px;
     margin-left: 110px;
+    height: 20px;
+    width: 34px;
+    box-sizing: border-box;
+}
+
+.line {
+    height: 1px;
+    width: auto;
+    background-color: rgba(156, 151, 151, 0.781);
+    margin: 0;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .level {
@@ -130,7 +155,7 @@ table {
     box-shadow: 0 0 10px #9ecaed;
 }
 
-.hints {
+.wrapper .hints {
     font-size: large;
     text-align: center;
     margin: auto;
@@ -144,13 +169,14 @@ table {
     box-shadow: 0 0 10px #9ecaed; 
 }
 
-.hints:hover {
+.wrapper .hints:hover {
     background-color: snow;
     cursor: pointer;
     transition: 0.5s;
 }
 
 .smiley {
+    display: inline-block;
     transition: 0.2s;
     background-color: silver;
     border: 2.5px solid #dadada;
@@ -160,13 +186,21 @@ table {
     box-shadow: 0 0 10px #9ecaed;
     margin-left: 110px;
     font-size: x-large;
+    transition: transform 0.8s;
+    animation-name: logo;
+    animation-duration: 3.5s;
+    animation-iteration-count: 0;
+}
+
+@keyframes logo {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(180deg);}
+    50% {transform: rotate(0deg);}
+    75% {transform: rotate(-180deg);}
+    100% {transform: rotate(0deg);}
 }
 
 .smiley:hover {
     cursor: pointer;
 }
 
-.first {
-    margin: auto;
-    width: 335px;
-}
