@@ -63,9 +63,6 @@ function buildBoard() {
             board[i][j] = cell;
         }
     }
-
-    // generateMines(board);
-    // setMinesNegsCount(board);
     // console.table(board);
     return board;
 }
@@ -98,12 +95,10 @@ function renderBoard(board) {
             } else if (currCell.isMarked === true) {
                 strHTML += FLAG;
             }
-
             strHTML += '\t</td>\n';
         }
         strHTML += '</tr>\n';
     }
-
     var elBoard = document.querySelector('.board');
     elBoard.innerHTML = strHTML;
 }
@@ -136,7 +131,8 @@ function levelSwitching(level) {
 }
 
 function cellClicked(thisCell, i, j) {
-    if (!gGame.isOn) return;
+    var currCell = gBoard[i][j];
+    if (!gGame.isOn || (currCell.isMine && currCell.isShown)) return;
 
     if (gHints !== 0 && thisCell.classList[0] === 'hints') {
         document.querySelector('.hints').style += '; background-color: rgb(231, 227, 227); box-shadow: 0 0 10px gold;';  
@@ -144,7 +140,6 @@ function cellClicked(thisCell, i, j) {
         gHint = true;
         return;
     }
-
     if (gHint) {
         document.querySelector('.hints').style += '; background-color: rgb(218, 216, 216); box-shadow: 0 0 10px #9ecaed;';
         hint({ i: i, j: j });
@@ -152,12 +147,9 @@ function cellClicked(thisCell, i, j) {
         gHint = false;
         return;
     }
-
     if (thisCell.classList[0] === 'hints' && gHints === 0) {
         alert('No more hints..')
     }
-
-    var currCell = gBoard[i][j];
     if (currCell.isMine === true) {
         gIsFirstClick = false;
         gGame.markedCount += 1;
@@ -329,8 +321,6 @@ function lives(lives) {
     }
     elLives.innerText = hearts;
 }
-
-
 
 function timer() {
     var elTimer = document.querySelector('.timer');
