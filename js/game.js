@@ -8,13 +8,13 @@ var gLevel = {
     MINES: 2
 };
 var gGame = {
-    isOn: true, //remember to refactor every new game
+    isOn: true,
     shownCount: 0,
     markedCount: 0,
     secsPassed: 0
 };
 var timerInterval;
-var gIsFirstClick = true; //remember to refactor every new game
+var gIsFirstClick = true;
 var gBoard;
 var gHint;
 var gScore = gLevel.MINES;
@@ -113,17 +113,14 @@ function levelSwitching(level) {
         case 'Beginner':
             gLevel.SIZE = 4;
             gLevel.MINES = 2;
-            // gLives = 2;
             break;
         case 'Medium':
             gLevel.SIZE = 8;
             gLevel.MINES = 12;
-            // gLives = 3;
             break;
         case 'Expert':
             gLevel.SIZE = 12;
             gLevel.MINES = 30;
-            // gLives = 3;
             break;
     }
     gScore = gLevel.MINES;
@@ -134,21 +131,12 @@ function cellClicked(thisCell, i, j) {
     var currCell = gBoard[i][j];
     if (!gGame.isOn || (currCell.isMine && currCell.isShown)) return;
 
-    if (gHints !== 0 && thisCell.classList[0] === 'hints') {
-        document.querySelector('.hints').style += '; background-color: rgb(231, 227, 227); box-shadow: 0 0 10px gold;';  
-        hintsCount(gHints);
-        gHint = true;
-        return;
-    }
     if (gHint) {
         document.querySelector('.hints').style += '; background-color: rgb(218, 216, 216); box-shadow: 0 0 10px #9ecaed;';
         hint({ i: i, j: j });
         setTimeout(function () { renderBoard(gBoard) }, 700);
         gHint = false;
         return;
-    }
-    if (thisCell.classList[0] === 'hints' && gHints === 0) {
-        alert('No more hints..')
     }
     if (currCell.isMine === true) {
         gIsFirstClick = false;
@@ -176,6 +164,14 @@ function cellClicked(thisCell, i, j) {
     gIsFirstClick = false;
     renderBoard(gBoard); //to check later if can change to rendering the specific cell instead
     // console.table(gBoard);
+}
+
+function hintBtnClick() {
+    if (gHints > 0) {
+        document.querySelector('.hints').style += '; background-color: rgb(231, 227, 227); box-shadow: 0 0 10px gold;';  
+        hintsCount(gHints);
+        gHint = true;
+    } else alert('No more hints..');
 }
 
 function hint(pos) {
